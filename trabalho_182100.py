@@ -1,6 +1,6 @@
 
 """
-   TRABALHO NUCLEAR
+###TRABALHO FISICA NUCLEAR###
    
 NOME: Lhwan Silva 
 RA:182100
@@ -123,11 +123,14 @@ w1=round(np.log(2)/mv[0],5)
 w2=round(np.log(2)/mv[1],5)
 w3=round(np.log(2)/mv[2],5)
 
-# Equações de decaimento para o Nb, Mo e Tc, respectivamente, com t em minutos #
-def n1(t):
+# Equações de decaimento para o Nb, Mo e Tc com t em minutos #
+# População do Nb
+def n1(t): 
   return (n0*np.exp(-w1*t))
+# População do Mo
 def n2(t):
   return ((n0*w1*np.exp(-w1*t)-n0*w2*np.exp(-w2*t))/(w1 - w2))
+# População do Nb
 def n3(t):
   return ((n0*np.exp(-(w1 + w2 - w3)*t)*(-w2**2*(w1-w3)*np.exp((w1-w3)*t) + w1**2*(w2-w3)*np.exp((w2-w3)*t) + (w1-w2)*w3**2*np.exp((w1+w2-2*w3)*t)))/((w1-w2)*(w1-w3)*(w2-w3)))
 
@@ -151,7 +154,3 @@ plt.ylabel('% do elemento')
 plt.xlabel('Tempo [min]')
 plt.legend()
 plt.show()
-
-#https://www.geeksforgeeks.org/multi-dimensional-lists-in-python/
-#https://www.w3schools.com/python/python_datatypes.asp
-#https://www.earthdatascience.org/courses/scientists-guide-to-plotting-data-in-python/plot-with-matplotlib/introduction-to-matplotlib-plots/customize-plot-colors-labels-matplotlib/
